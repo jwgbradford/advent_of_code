@@ -4,9 +4,10 @@ def get_data(file):
     with open(file) as input_file:
         input_data = input_file.read()
     data_list = input_data.split("\n")
+    data_list.pop(-1) # delete last empty line in list data
     return data_list
 
-starting_list = get_data('input_2_test.txt')
+starting_list = get_data('input_2.txt')
 
 wrapping_paper = 0
 
@@ -26,5 +27,4 @@ for parcel in starting_list:
         wrapping_paper = wrapping_paper + side_2
     else:
         wrapping_paper = wrapping_paper + side_3
-    print(wrapping_paper)
-    wrapping_paper = 0
+print(wrapping_paper)
